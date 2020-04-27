@@ -9,6 +9,7 @@ Configuration
 Example Repository - https://github.com/pozetroninc/github-action-get-latest-release
 
 **owner**: The Github user or organization that owns the repository. e.g. pozetroninc
+
 **repo**:  The repository name. e.g. github-action-get-latest-release
 
 Usage Example
