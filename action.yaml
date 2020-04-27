@@ -2,7 +2,7 @@ name: 'Get Latest Release'
 description: 'Get the latest release from another repository and output that for use in other actions'
 branding:
   icon: 'anchor'
-  color: 'darkorange'
+  color: 'orange'
 outputs:
   release:
     description: 'Latest release'
