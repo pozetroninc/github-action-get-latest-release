@@ -4,7 +4,7 @@ branding:
   icon: 'anchor'
   color: 'darkorange'
 outputs:
-  tag:
+  release:
     description: 'Latest release'
 runs:
   using: 'node12'
