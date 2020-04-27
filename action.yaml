@@ -1,0 +1,11 @@
+name: 'Get Latest Release'
+description: 'Get the latest release from another repository and output that for use in other actions'
+branding:
+  icon: 'anchor'
+  color: 'darkorange'
+outputs:
+  tag:
+    description: 'Latest release'
+runs:
+  using: 'node12'
+  main: 'main.js'
