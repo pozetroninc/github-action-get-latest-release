@@ -1,16 +1,25 @@
 Get Latest Release
 ==================
 
-A simple Github action to get the latest release from another repository.
+A simple Github action to get the latest release from another repository. No authentication required.
 
 Configuration
 =============
 
 Example Repository - https://github.com/pozetroninc/github-action-get-latest-release
 
-**owner**: The Github user or organization that owns the repository. e.g. pozetroninc
+Inputs (all are required):
 
-**repo**:  The repository name. e.g. github-action-get-latest-release
+Name | Description | Example
+--- | --- | ---
+owner | The Github user or organization that owns the repository |  pozetroninc
+repo | The repository name | github-action-get-latest-release
+
+Outputs:
+
+Name | Description | Example
+--- | --- | ---
+release | The latest release version tag | v0.3.0
 
 Usage Example
 =============
