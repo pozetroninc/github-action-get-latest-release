@@ -1,13 +1,17 @@
 const core = require('@actions/core');
 const { Octokit } = require("@octokit/rest");
 
-const owner = core.getInput('owner');
-const repo = core.getInput('repo');
+const repository = core.getInput('repository');
+var owner = core.getInput('owner');
+var repo = core.getInput('repo');
 
 const octokit = new Octokit()
 
 async function run() {
     try {
+        if (repository){
+                [owner, repo] = repository.split("/");
+            }
         const releases  = await octokit.repos.listReleases({
             owner: owner,
             repo: repo,

@@ -1,0 +1,17 @@
+name: Test
+on: [push]
+
+jobs:
+  build:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - uses: ./
+        with:
+            repository: pozetroninc/github-action-get-latest-release
+      - uses: ./
+        with:
+            owner: pozetroninc
+            repo: github-action-get-latest-release
