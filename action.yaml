@@ -2,9 +2,9 @@ name: 'Get Latest Release'
 description: 'Get the latest release from another repository and output that for use in other actions'
 branding:
   icon: 'anchor'
-  color: 'darkorange'
+  color: 'orange'
 outputs:
-  tag:
+  release:
     description: 'Latest release'
 runs:
   using: 'node12'
