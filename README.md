@@ -8,14 +8,20 @@ Configuration
 
 Example Repository - https://github.com/pozetroninc/github-action-get-latest-release
 
-Inputs (all are required):
+**Inputs**
 
 Name | Description | Example
 --- | --- | ---
 owner | The Github user or organization that owns the repository |  pozetroninc
 repo | The repository name | github-action-get-latest-release
 
-Outputs:
+**or**
+Name | Description | Example
+--- | --- | ---
+repository | The repository name in full | pozetroninc/github-action-get-latest-release
+
+
+**Outputs**
 
 Name | Description | Example
 --- | --- | ---
