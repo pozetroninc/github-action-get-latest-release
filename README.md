@@ -46,8 +46,7 @@ jobs:
       - id: timeseries
         uses: pozetroninc/github-action-get-latest-release@master
         with:
-            owner: RedisTimeSeries
-            repo: RedisTimeSeries
+            repository: RedisTimeSeries/RedisTimeSeries
       - uses: actions/checkout@v2
       - uses: docker/build-push-action@v1
         with:
