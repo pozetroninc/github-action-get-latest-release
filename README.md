@@ -20,6 +20,10 @@ Name | Description | Example
 --- | --- | ---
 repository | The repository name in full | pozetroninc/github-action-get-latest-release
 
+**Additional Inputs (Optional)**
+Name | Description | Example
+--- | --- | ---
+excludes | Exclude draft or pre-release versions. | "prerelease, draft"
 
 **Outputs**
 
@@ -43,6 +47,7 @@ jobs:
         with:
             owner: JohnSully
             repo: KeyDB
+            excludes: prerelease, draft
       - id: timeseries
         uses: pozetroninc/github-action-get-latest-release@master
         with:

@@ -15,3 +15,8 @@ jobs:
         with:
             owner: pozetroninc
             repo: github-action-get-latest-release
+      - uses: ./
+        with:
+            owner: pozetroninc
+            repo: github-action-get-latest-release
+            excludes: prerelease, draft

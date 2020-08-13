@@ -4,6 +4,7 @@ const { Octokit } = require("@octokit/rest");
 const repository = core.getInput('repository');
 var owner = core.getInput('owner');
 var repo = core.getInput('repo');
+var excludes = core.getInput('excludes').trim().split(",");
 
 const octokit = new Octokit()
 
@@ -11,16 +12,27 @@ async function run() {
     try {
         if (repository){
                 [owner, repo] = repository.split("/");
-            }
-        const releases  = await octokit.repos.listReleases({
+        }
+        var releases  = await octokit.repos.listReleases({
             owner: owner,
             repo: repo,
             });
-        core.setOutput('release', releases.data[0].tag_name)
+        releases = releases.data;
+        if (excludes.includes('prerelease')) {
+            releases = releases.filter(x => x.prerelease != true);
         }
-    catch (error) {
-        core.setFailed(error.message);
+        if (excludes.includes('draft')) {
+            releases = releases.filter(x => x.draft != true);
+        }
+        if (releases.length) {
+            core.setOutput('release', releases[0].tag_name)
+        } else {
+            core.setFailed("No valid releases");
         }
     }
+    catch (error) {
+        core.setFailed(error.message);
+    }
+}
 
 run()
