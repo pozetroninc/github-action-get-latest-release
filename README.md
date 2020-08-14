@@ -45,13 +45,13 @@ jobs:
       - id: keydb
         uses: pozetroninc/github-action-get-latest-release@master
         with:
-            owner: JohnSully
-            repo: KeyDB
-            excludes: prerelease, draft
+          owner: JohnSully
+          repo: KeyDB
+          excludes: prerelease, draft
       - id: timeseries
         uses: pozetroninc/github-action-get-latest-release@master
         with:
-            repository: RedisTimeSeries/RedisTimeSeries
+          repository: RedisTimeSeries/RedisTimeSeries
       - uses: actions/checkout@v2
       - uses: docker/build-push-action@v1
         with:
