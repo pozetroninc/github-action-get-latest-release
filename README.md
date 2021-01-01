@@ -63,3 +63,9 @@ jobs:
           tags: latest, ${{ steps.keydb.outputs.release }}_${{ steps.timeseries.outputs.release }}
 
 ```
+
+To use the current repo:
+``` yaml
+with:
+  repository: ${{ github.repository }}
+```
