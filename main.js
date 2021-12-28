@@ -25,9 +25,8 @@ async function run() {
             releases = releases.filter(x => x.draft != true);
         }
         if (releases.length) {
-            core.info(JSON.stringify(releases[0]))
-            core.setOutput('release', releases[0].tag_name)
-            core.setOutput('id', releases[0].id)
+            core.setOutput('release', releases[0].tag_name);
+            core.setOutput('id', String(releases[0].id));
         } else {
             core.setFailed("No valid releases");
         }
