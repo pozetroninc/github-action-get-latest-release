@@ -30,6 +30,7 @@ excludes | Exclude draft or pre-release versions. | "prerelease, draft"
 Name | Description | Example
 --- | --- | ---
 release | The latest release version tag | v0.3.0
+id | The latest release version id | 12345
 
 Usage Example
 =============

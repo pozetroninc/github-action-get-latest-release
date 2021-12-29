@@ -18,7 +18,9 @@ inputs:
     required: false
 outputs:
   release:
-    description: 'Latest release'
+    description: 'Latest release name'
+  id:
+    description: 'Latest release ID'
 runs:
   using: 'node12'
   main: 'main.js'
