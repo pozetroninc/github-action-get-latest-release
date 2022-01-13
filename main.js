@@ -16,6 +16,7 @@ async function run() {
         var releases  = await octokit.repos.listReleases({
             owner: owner,
             repo: repo,
+            per_page: 100,
             });
         releases = releases.data;
         if (excludes.includes('prerelease')) {
