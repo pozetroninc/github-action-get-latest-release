@@ -22,5 +22,5 @@ outputs:
   id:
     description: 'Latest release ID'
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'main.js'
