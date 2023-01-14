@@ -1,0 +1,32 @@
+---
+name: Build with ncc
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.ref }}
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Install npm and package
+        run: |
+          # Get github branch without refs
+          GITHUB_BRANCH=$( echo "${{ github.ref }}" | sed 's/refs\/heads\///g' )
+          echo "GITHUB_BRANCH=$GITHUB_BRANCH" >> "$GITHUB_ENV"
+        
+          # Install npm, ncc and build
+          npm install
+          npm i -g @vercel/ncc
+          npm run package
+      - name: Push updated ncc build if available
+        uses: test-room-7/action-update-file@v1
+        with:
+          branch: ${{ env.GITHUB_BRANCH }}
+          file-path: dist/*
+          commit-msg: Update ncc build to latest version
+          github-token: ${{ secrets.GITHUB_TOKEN }}

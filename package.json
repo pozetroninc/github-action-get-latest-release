@@ -1,16 +1,32 @@
 {
   "name": "github-action-get-latest-release",
-  "version": "0.1.0",
+  "version": "0.7.0",
   "description": "A simple action to get the latest release from a Github repo.",
   "main": "main.js",
   "scripts": {
+    "lint": "eslint main.js",
+    "package": "ncc build main.js -o dist",
+    "build": "ncc build main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pozetroninc/github-action-get-latest-release.git"
+  },
+  "keywords": [
+    "actions",
+    "latest",
+    "release"
+  ],
+  "bugs": {
+    "url": "https://github.com/pozetroninc/github-action-get-latest-release/issues"
+  },
+  "homepage": "https://github.com/pozetroninc/github-action-get-latest-release#readme",
+  "author": "Pozetron Inc",
   "license": "MIT",
   "dependencies": {
-    "@actions/core": "^1.9.1",
-    "@actions/github": "^2.1.1",
-    "octokit": "^1.0.0-hello-world"
+    "@actions/core": "^1.10.0",
+    "@actions/github": "^5.1.1",
+    "@octokit/rest": "^19.0.5"
   }
 }

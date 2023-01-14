@@ -1,5 +1,8 @@
+---
 name: 'Get Latest Release'
-description: 'Get the latest release from another repository and output that for use in other actions'
+description: >-
+  Get the latest release from another repository and output that for use in 
+  other actions
 branding:
   icon: 'anchor'
   color: 'orange'
@@ -16,11 +19,16 @@ inputs:
   excludes:
     description: 'Types of releases to exclude (e.g. pre-release)'
     required: false
+  token:
+    description: 'The GitHub token or personal access token'
+    required: false
 outputs:
   release:
     description: 'Latest release name'
   id:
     description: 'Latest release ID'
+  description:
+    description: 'Latest release description body'
 runs:
-  using: 'node12'
-  main: 'main.js'
+  using: 'node16'
+  main: 'dist/index.js'

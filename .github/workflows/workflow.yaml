@@ -1,3 +1,4 @@
+---
 name: Test
 on: [push]
 
@@ -7,17 +8,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - run: npm i
       - uses: ./
         with:
-            repository: pozetroninc/github-action-get-latest-release
+          repository: pozetroninc/github-action-get-latest-release
+          token: ${{ secrets.GITHUB_TOKEN }}
       - uses: ./
         with:
-            owner: pozetroninc
-            repo: github-action-get-latest-release
+          owner: pozetroninc
+          repo: github-action-get-latest-release
+          token: ${{ secrets.GITHUB_TOKEN }}
       - uses: ./
         with:
-            owner: pozetroninc
-            repo: github-action-get-latest-release
-            excludes: prerelease, draft
+          owner: pozetroninc
+          repo: github-action-get-latest-release
+          excludes: prerelease, draft
+          token: ${{ secrets.GITHUB_TOKEN }}
