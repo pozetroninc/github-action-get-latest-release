@@ -13,6 +13,18 @@ jobs:
       - uses: ./
         with:
           repository: pozetroninc/github-action-get-latest-release
+      - uses: ./
+        with:
+          owner: pozetroninc
+          repo: github-action-get-latest-release
+      - uses: ./
+        with:
+          owner: pozetroninc
+          repo: github-action-get-latest-release
+          excludes: prerelease, draft
+      - uses: ./
+        with:
+          repository: pozetroninc/github-action-get-latest-release
           token: ${{ secrets.GITHUB_TOKEN }}
       - uses: ./
         with:
