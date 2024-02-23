@@ -1,6 +1,6 @@
 {
   "name": "github-action-get-latest-release",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "A simple action to get the latest release from a Github repo.",
   "main": "main.js",
   "scripts": {
@@ -26,7 +26,7 @@
   "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.10.0",
-    "@actions/github": "^5.1.1",
-    "@octokit/rest": "^19.0.5"
+    "@actions/github": "^6.0.0",
+    "@octokit/rest": "^20.0.2"
   }
 }

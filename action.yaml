@@ -30,5 +30,5 @@ outputs:
   description:
     description: 'Latest release description body'
 runs:
-  using: 'node16'
+  using: 'node20'
   main: 'dist/index.js'
