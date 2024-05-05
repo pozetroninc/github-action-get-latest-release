@@ -1,7 +1,10 @@
 ---
 name: Build with ncc
 
-on: [push]
+on:
+  push:
+    branches:
+    - master
 
 jobs:
   build:
