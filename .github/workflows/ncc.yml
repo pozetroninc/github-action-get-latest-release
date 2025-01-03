@@ -27,7 +27,7 @@ jobs:
           npm i -g @vercel/ncc
           npm run package
       - name: Push updated ncc build if available
-        uses: test-room-7/action-update-file@v1
+        uses: test-room-7/action-update-file@v2.0.0
         with:
           branch: ${{ env.GITHUB_BRANCH }}
           file-path: dist/*
